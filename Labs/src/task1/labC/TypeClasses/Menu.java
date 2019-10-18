@@ -1,11 +1,11 @@
-package task1.labC;
+package task1.labC.TypeClasses;
 
 import java.util.Scanner;
 
 public class Menu {
 
 
-  static void help() {
+  public static void help() {
     System.out.println("search");
     System.out.println("delete");
     System.out.println("add");
@@ -14,7 +14,7 @@ public class Menu {
     System.out.println("exit");
   }
 
-  static String readFromUser() {
+  public static String readFromUser() {
     Scanner scanner = new Scanner(System.in);
     if (scanner.hasNextLine()) {
       return scanner.nextLine();

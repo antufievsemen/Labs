@@ -1,5 +1,8 @@
 package task1.labC;
 
+import task1.labC.TypeClasses.*;
+
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -69,7 +72,7 @@ public class MainC {
             if (newBook != null)
               collectionOfBook.addBook(newBook);
             else {
-              System.out.println("Wrong new book repeat");
+              System.out.println("Wrong new bookad");
               break;
             }
             break;
@@ -87,6 +90,9 @@ public class MainC {
       }
     } catch(IOException e) {
       throw new Exception("The file is bad or doesnt exist");
+    } catch (NumberFormatException e) {
+      throw new Exception("Illegal argument");
     }
+
   }
 }

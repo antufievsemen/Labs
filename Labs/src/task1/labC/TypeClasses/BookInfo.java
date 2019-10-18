@@ -1,6 +1,10 @@
-package task1.labC;
+package task1.labC.TypeClasses;
 
 public class BookInfo {
+  private Integer id;
+  private String author;
+  private String name;
+  private Integer year;
 
   public BookInfo(int id, String author, String name, int year){
     this.id = id;
@@ -8,12 +12,6 @@ public class BookInfo {
     this.name = name;
     this.year = year;
   }
-
-
-  private Integer id;
-  private String author;
-  private String name;
-  private Integer year;
 
   public int getId(){
     return this.id;

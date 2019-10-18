@@ -1,10 +1,10 @@
-package task1.labC;
+package task1.labC.TypeClasses;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-class MyList<E extends BookInfo> extends ArrayList<E> {
+public class MyList<E extends BookInfo> extends ArrayList<E> {
 
   public <T extends String>MyList(List<T> arr) throws Exception{
     for (String str : arr) {
