@@ -1,12 +1,13 @@
 package StringBuilderWIthUndo;
 
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class StringBuilderWithUndo {
 
-    private Queue<StringBuilder> commands = new LinkedList<>();
+    private Deque<StringBuilder> commands = new LinkedList<>();
     private StringBuilder stringBuilder;
 
     public StringBuilderWithUndo(String line) {
@@ -253,10 +254,9 @@ public class StringBuilderWithUndo {
 
     public StringBuilderWithUndo undo() {
       if (!commands.isEmpty()) {
-        stringBuilder = commands.element();
-        commands.remove();
+        stringBuilder = commands.removeLast();
       } else {
-        System.err.println("История изменений путса, состояние объекта не изменено");
+        System.err.println("История изменений пуста, состояние объекта не изменено");
       }
       return this;
     }
