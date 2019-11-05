@@ -1,7 +1,6 @@
 package MyProperties;
 
 import java.io.File;
-import java.io.IOError;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
