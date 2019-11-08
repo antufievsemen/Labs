@@ -102,4 +102,14 @@ public class MyFileManager {
     }
     return null;
   }
+
+  public void help(){
+    System.out.println("viewFiles - view all files and dirs in the current dir");
+    System.out.println("moveToDir - choose dir to go");
+    System.out.println("deleteFile - choose the file to delete");
+    System.out.println("createFile - create file in current dir");
+    System.out.println("checkFile - read data from the file");
+    System.out.println("writeToFile - write data to the file");
+    System.out.println("help - view the commands");
+  }
 }

@@ -9,10 +9,12 @@ public class Main {
     MyFileManager myFileManager = new MyFileManager("");//Write your path
     System.out.println("Write the command");
     while (true) {
+      myFileManager.help();
       String userStr = readFromUser();
       if (userStr == null) {
         System.out.println("Rewrite the command");
       }
+
       if(userStr.equals("exit")){
         break;
       }
@@ -104,6 +106,10 @@ public class Main {
           } catch (IOException e) {
             System.out.println("Have error with write to the file" + userPar);
           }
+          break;
+        }
+        case("help"):{
+          myFileManager.help();
           break;
         }
         default:
