@@ -6,12 +6,12 @@ public class Menu {
 
 
   public static void help() {
-    System.out.println("search");
-    System.out.println("delete");
-    System.out.println("add");
-    System.out.println("update");
-    System.out.println("view_all");
-    System.out.println("exit");
+    System.out.println("search - find book with field in library(fields: id, author, name, year)");
+    System.out.println("delete - delete book from library by id");
+    System.out.println("add - add book to library, you should indicate id, author, name, year");
+    System.out.println("update - update info about book(search book by id to update)");
+    System.out.println("view_all - view all book in the library");
+    System.out.println("exit - exit from the programm");
   }
 
   public static String readFromUser() {

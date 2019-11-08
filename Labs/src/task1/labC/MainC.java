@@ -1,7 +1,8 @@
 package task1.labC;
 
-import task1.labC.TypeClasses.*;
-
+import task1.labC.TypeClasses.BookInfo;
+import task1.labC.TypeClasses.MyList;
+import task1.labC.TypeClasses.Menu;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -10,15 +11,20 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class MainC {
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args){
     try {
-      List<String> lines = Files.readAllLines(Paths.get("src/task1/labC/Library.txt"), StandardCharsets.UTF_8);
+      List<String> lines = Files.readAllLines(Paths.get("src\\task1\\labC\\TypeClasses\\Library.txt"), StandardCharsets.UTF_8);
       MyList<BookInfo> collectionOfBook = new MyList<BookInfo>(lines);
       Menu.help();
-      while (true) {
+      System.out.println("Use command");
+      while(true){
 
         String usersString = Menu.readFromUser();
-        if (usersString == null) throw new Exception("Illegal argument");
+        if(usersString == null){
+          System.out.println("Incorrect command");
+          continue;
+        }
+
         if (usersString.equals("exit")) break;
         switch (usersString) {
 
@@ -88,10 +94,9 @@ public class MainC {
             break;
         }
       }
-    } catch(IOException e) {
-      throw new Exception("The file is bad or doesnt exist");
-    } catch (NumberFormatException e) {
-      throw new Exception("Illegal argument");
+
+    } catch (IOException e) {
+      System.out.println("File is incorrect");
     }
 
   }

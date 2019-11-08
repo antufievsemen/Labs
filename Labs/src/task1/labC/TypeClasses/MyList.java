@@ -6,7 +6,7 @@ import java.util.List;
 
 public class MyList<E extends BookInfo> extends ArrayList<E> {
 
-  public <T extends String>MyList(List<T> arr) throws Exception{
+  public <T extends String>MyList(List<T> arr) {
     for (String str : arr) {
       this.addBook(str);
     }

@@ -2,41 +2,55 @@ package task1.labB;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.stream.IntStream;
 
 public class MainB {
-  public static void main(String[] args) throws Exception {
-    String ar = new String("nmlkhgfedcba");
+  public static void main(String[] args) {
+    try {
 
-    if (ar.length() % 3 != 0) throw new Exception("Error with argument");
+      String regexNumber = ".*\\d.*";
+      String regexDot = ".*\\W.*";
 
-    StringBuilder []stringAr = new StringBuilder[ar.length() / 3];
-    for (int i = 0; i <= ar.length(); i++) {
-      int counter = 0;
-      stringAr[i] = new StringBuilder(ar.substring(counter, counter + 3));
-      ar = ar.replace(stringAr[i], "");
-      counter += 1;
-    }
+      String argumentFromUser = args[0];
+      if(argumentFromUser.matches(regexNumber) || argumentFromUser.matches(regexDot)){
+        throw new Exception("Argument have illegal chars");
+      }
 
-    for (int i = 0; i < stringAr.length; i++ ){
+      if(argumentFromUser.length() % 3 != 0) throw new ExceptionInInitializerError();
+
+      StringBuilder[] stringAr = new StringBuilder[argumentFromUser.length() / 3];
+
+      for(int i = 0; i <= argumentFromUser.length(); i++){
+        int counter = 0;
+        stringAr[i] = new StringBuilder(argumentFromUser.substring(counter, counter + 3));
+        argumentFromUser = argumentFromUser.replace(stringAr[i], "");
+        counter += 1;
+      }
+
+      for (StringBuilder stringBuilder : stringAr) {
         char c;
         do {
           Random r = new Random();
           c = (char) (r.nextInt(26) + 'a');
-        } while(c == stringAr[i].charAt(0) && c == stringAr[i].charAt(2));
-        stringAr[i].setCharAt(1, c);
-    }
+        } while (c == stringBuilder.charAt(0) && c == stringBuilder.charAt(2));
+        stringBuilder.setCharAt(1, c);
+      }
 
-    sortedForAlpha(stringAr);
+      sortedForAlpha(stringAr);
 
-    for(StringBuilder i:stringAr) {
-      System.out.print(i + " ");
+      for(StringBuilder i : stringAr){
+        System.out.print(i + " ");
+      }
+
+    } catch(ExceptionInInitializerError e){
+      System.out.println("String must have 3 elements in part");
+    } catch(Exception e){
+      System.out.println("Error with argument" + e.getMessage());
     }
   }
 
-  private static void sortedForAlpha(StringBuilder[] arr) {
+  private static void sortedForAlpha(StringBuilder[] arr){
     Arrays.sort(arr, StringBuilder::compareTo);
   }
- }
+}
 
 
