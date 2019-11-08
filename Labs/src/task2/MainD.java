@@ -14,8 +14,8 @@ public class MainD {
 
   public static void main(String[] args) {
     List<Animal> animalList = new ArrayList<Animal>();
-    String filePathZooIn = "C:/Users/antuf/Projects/Lab2/src/TypeClasses/ZooIn";
-    String filePathZooOut = "C:/Users/antuf/Projects/Lab2/src/TypeClasses/ZooOut";
+    String filePathZooIn = "src\\TypeClasses\\ZooIn";
+    String filePathZooOut = "src\\TypeClasses\\ZooOut";
 
     animalList = readZooFrom(filePathZooIn);
 

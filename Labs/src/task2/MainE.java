@@ -14,8 +14,8 @@ public class MainE {
 
   public static void main(String[] args) throws Exception {
     List<Animal> animalList = new ArrayList<Animal>();
-    String filePathZooIn = "C:/Users/antuf/Projects/Lab2/src/TypeClasses/ZooIn";
-    String filePathZooOut = "C:/Users/antuf/Projects/Lab2/src/TypeClasses/ZooOut";
+    String filePathZooIn = "src\\TypeClasses\\ZooIn";
+    String filePathZooOut = "src\\TypeClasses\\ZooOut";
     try {
       animalList = readZooFrom(filePathZooIn);
 
